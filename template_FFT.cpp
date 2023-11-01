@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
-const int G = 3, Gi = 332748118, MOD = 998244353;
 
 using ll = long long;
 using std::vector, std::swap, std::cin, std::cout, std::endl;
 
 struct Complex {
     double real = 0, imag = 0;
+
+    ~Complex() = default;
 
     Complex operator+ (const Complex &b) const {
         return {real + b.real, imag + b.imag};
@@ -28,20 +29,6 @@ struct Poly : public std::vector<Complex> {
         return size() > b.size();
     }
 };
-
-std::priority_queue<Poly> q;
-
-ll power(ll a, ll b = MOD - 2, ll p = MOD) {
-    ll res = 1;
-    while (b) {
-        if (b & 1) {
-            res = res * a % p;
-        }
-        a = a * a % p;
-        b >>= 1;
-    }
-    return res;
-}
 
 void FFT(Poly &A, vector<int> &R, int lim, int type) {
     for (int i = 0; i < lim; i++) {

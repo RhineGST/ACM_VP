@@ -16,8 +16,6 @@ struct Poly : public std::vector<long long> {
     }
 };
 
-std::priority_queue<Poly> q;
-
 ll power(ll a, ll b = MOD - 2, ll p = MOD) {
     ll res = 1;
     while (b) {
