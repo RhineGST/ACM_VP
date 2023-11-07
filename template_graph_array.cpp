@@ -82,6 +82,8 @@ struct Edge {
 
 UndirectedGraph<Edge, maxn> graph;
 
+//tarjan后给所有的割边在vis数组内标记为true
+
 int main() {
     int n, m;
     std::cin >> n >> m;
