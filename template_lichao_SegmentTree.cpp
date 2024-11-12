@@ -31,7 +31,7 @@ struct LCTree{
 
     int insert(Line t, int now, int l, int r)
     {
-        if(r < t.k) return 0;
+        if(r < t.k) return 0; //注意，仅用在决策单调性中，如果不需要注意删除！！
         if(!now) return newNode(t);
         int mid = (l + r) >> 1;
         bool lc1 = cmp(t, line[now], l), rc1 = cmp(t, line[now], r);
