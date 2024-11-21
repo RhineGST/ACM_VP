@@ -2,9 +2,8 @@
 
 struct Tag {
     long long x;
-    Tag& operator+=(const Tag &o) {
+    void operator+=(const Tag &o) {
         x += o.x;
-        return *this;
     }
 };
 
@@ -19,15 +18,13 @@ struct Info {
         len = 1;
     }
 
-    Info& operator+=(const Info &o) {
+    void operator+=(const Info &o) {
         x += o.x;
         len += o.len;
-        return *this;
     }
 
-    Info& operator+=(const Tag &o) {
+    void operator+=(const Tag &o) {
         x += len * o.x;
-        return *this;
     }
 };
 
